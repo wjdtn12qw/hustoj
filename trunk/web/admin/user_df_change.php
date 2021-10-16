@@ -18,6 +18,10 @@ if ($row[0]=='N')
 else 
 	$sql="UPDATE `users` SET `defunct`='N' WHERE `user_id`=?";
 pdo_query($sql,$cid);
+
+
+if($OJ_SaaS_ENABLE && $domain==$DOMAIN)  
+            create_subdomain($cid);
 ?>
 <script language=javascript>
 	history.go(-1);
