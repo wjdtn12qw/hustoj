@@ -115,6 +115,8 @@ if(!isset($OJ_REG_NEED_CONFIRM)||!$OJ_REG_NEED_CONFIRM){
 		}
 		$_SESSION[$OJ_NAME.'_'.'ac']=Array();
 		$_SESSION[$OJ_NAME.'_'.'sub']=Array();
+                if($OJ_SaaS_ENABLE && $domain==$DOMAIN)  
+                    create_subdomain($cid);
 }
 ?>
 <script>history.go(-2);</script>
